@@ -1,5 +1,6 @@
 package com.bharath.springcloud.model;
 
+import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Date;
 
@@ -20,8 +21,16 @@ public class Flight {
     private String departureCity;
     private String arrivalCity;
     private Date dateOfDeparture;
-    @Transient
-    private Timestamp currentTimestamp;
+    private Time estimatedDepartureTime;
+
+    public Time getEstimatedDepartureTime() {
+        return estimatedDepartureTime;
+    }
+
+    public void setEstimatedDepartureTime(Time estimatedDepartureTime) {
+        this.estimatedDepartureTime = estimatedDepartureTime;
+    }
+
 
     public long getId() {
         return id;
@@ -71,11 +80,4 @@ public class Flight {
         this.dateOfDeparture = dateOfDeparture;
     }
 
-    public Timestamp getCurrentTimestamp() {
-        return currentTimestamp;
-    }
-
-    public void setCurrentTimestamp(Timestamp currentTimestamp) {
-        this.currentTimestamp = currentTimestamp;
-    }
 }
